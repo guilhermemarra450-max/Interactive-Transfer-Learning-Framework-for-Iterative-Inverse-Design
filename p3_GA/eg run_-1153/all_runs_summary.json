@@ -1,0 +1,254 @@
+{
+  "timestamp": "20260208_025113",
+  "total_runs": 5,
+  "optimization_type": "maximize",
+  "target_value": null,
+  "model_info": {
+    "target_variable": "Target",
+    "selected_features": [
+      "Feature_1",
+      "Feature_2",
+      "Feature_3",
+      "Feature_4",
+      "Feature_5",
+      "Feature_6",
+      "Feature_7"
+    ],
+    "original_feature_names": [
+      "Feature_1",
+      "Feature_2",
+      "Feature_3",
+      "Feature_4",
+      "Feature_5",
+      "Feature_6",
+      "Feature_7"
+    ],
+    "feature_ranges": {
+      "Feature_1": [
+        600.0,
+        1000.0
+      ],
+      "Feature_2": [
+        2.0,
+        10.0
+      ],
+      "Feature_3": [
+        30.0,
+        90.0
+      ],
+      "Feature_4": [
+        0.1,
+        0.6
+      ],
+      "Feature_5": [
+        0.0,
+        1.0
+      ],
+      "Feature_6": [
+        0.0,
+        1.0
+      ],
+      "Feature_7": [
+        1000.0,
+        1500.0
+      ]
+    }
+  },
+  "runs": [
+    {
+      "run_number": 1,
+      "timestamp": "2026-02-08 02:51:08",
+      "optimization_type": "maximize",
+      "target_value": null,
+      "best_value": 3.977675437927246,
+      "actual_prediction": 3.977675437927246,
+      "best_solution": [
+        762.4781833831513,
+        6.500137374158545,
+        71.08674962658228,
+        0.4615236876109333,
+        0.5190515308323953,
+        0.03878917672592441,
+        1297.9809620898614
+      ],
+      "elapsed_time": 1.3698091506958008,
+      "ga_params": {
+        "population_size": 50,
+        "generations": 100,
+        "crossover_prob": 0.8,
+        "mutation_prob": 0.2,
+        "tournament_size": 3,
+        "eta": 10.0,
+        "elitism_ratio": 0.1,
+        "min_value": 0.0,
+        "max_value": 1.0,
+        "hof_size": 5
+      },
+      "generations": 100,
+      "final_stats": {
+        "avg": 3.977675437927246,
+        "std": 0.0,
+        "min": 3.977675437927246,
+        "max": 3.977675437927246
+      }
+    },
+    {
+      "run_number": 2,
+      "timestamp": "2026-02-08 02:51:09",
+      "optimization_type": "maximize",
+      "target_value": null,
+      "best_value": 3.977675437927246,
+      "actual_prediction": 3.977675437927246,
+      "best_solution": [
+        940.4219471939654,
+        6.71521369736918,
+        44.68531162212022,
+        0.38937028441107413,
+        0.8909266553143086,
+        0.7774740449628502,
+        1014.1779210867652
+      ],
+      "elapsed_time": 1.3467676639556885,
+      "ga_params": {
+        "population_size": 50,
+        "generations": 100,
+        "crossover_prob": 0.8,
+        "mutation_prob": 0.2,
+        "tournament_size": 3,
+        "eta": 10.0,
+        "elitism_ratio": 0.1,
+        "min_value": 0.0,
+        "max_value": 1.0,
+        "hof_size": 5
+      },
+      "generations": 100,
+      "final_stats": {
+        "avg": 3.977675437927246,
+        "std": 0.0,
+        "min": 3.977675437927246,
+        "max": 3.977675437927246
+      }
+    },
+    {
+      "run_number": 3,
+      "timestamp": "2026-02-08 02:51:11",
+      "optimization_type": "maximize",
+      "target_value": null,
+      "best_value": 3.977675437927246,
+      "actual_prediction": 3.977675437927246,
+      "best_solution": [
+        843.7959592914592,
+        9.868619929064833,
+        56.14995161979998,
+        0.5293345105949446,
+        0.25487912521532075,
+        0.701901624671033,
+        1109.078630756009
+      ],
+      "elapsed_time": 1.3358557224273682,
+      "ga_params": {
+        "population_size": 50,
+        "generations": 100,
+        "crossover_prob": 0.8,
+        "mutation_prob": 0.2,
+        "tournament_size": 3,
+        "eta": 10.0,
+        "elitism_ratio": 0.1,
+        "min_value": 0.0,
+        "max_value": 1.0,
+        "hof_size": 5
+      },
+      "generations": 100,
+      "final_stats": {
+        "avg": 3.977675437927246,
+        "std": 0.0,
+        "min": 3.977675437927246,
+        "max": 3.977675437927246
+      }
+    },
+    {
+      "run_number": 4,
+      "timestamp": "2026-02-08 02:51:12",
+      "optimization_type": "maximize",
+      "target_value": null,
+      "best_value": 3.977675437927246,
+      "actual_prediction": 3.977675437927246,
+      "best_solution": [
+        606.5326352253452,
+        4.919463283301492,
+        34.714518374099434,
+        0.1457362332243742,
+        0.8032337681629501,
+        0.18760900439602912,
+        1164.8360759060645
+      ],
+      "elapsed_time": 1.3817577362060547,
+      "ga_params": {
+        "population_size": 50,
+        "generations": 100,
+        "crossover_prob": 0.8,
+        "mutation_prob": 0.2,
+        "tournament_size": 3,
+        "eta": 10.0,
+        "elitism_ratio": 0.1,
+        "min_value": 0.0,
+        "max_value": 1.0,
+        "hof_size": 5
+      },
+      "generations": 100,
+      "final_stats": {
+        "avg": 3.977675437927246,
+        "std": 0.0,
+        "min": 3.977675437927246,
+        "max": 3.977675437927246
+      }
+    },
+    {
+      "run_number": 5,
+      "timestamp": "2026-02-08 02:51:13",
+      "optimization_type": "maximize",
+      "target_value": null,
+      "best_value": 3.977675437927246,
+      "actual_prediction": 3.977675437927246,
+      "best_solution": [
+        740.202763151209,
+        7.69300537397669,
+        39.04795319405628,
+        0.1982555966238803,
+        0.8424640978134155,
+        0.9032002261521332,
+        1153.2403361127535
+      ],
+      "elapsed_time": 1.32643461227417,
+      "ga_params": {
+        "population_size": 50,
+        "generations": 100,
+        "crossover_prob": 0.8,
+        "mutation_prob": 0.2,
+        "tournament_size": 3,
+        "eta": 10.0,
+        "elitism_ratio": 0.1,
+        "min_value": 0.0,
+        "max_value": 1.0,
+        "hof_size": 5
+      },
+      "generations": 100,
+      "final_stats": {
+        "avg": 3.977675437927246,
+        "std": 0.0,
+        "min": 3.977675437927246,
+        "max": 3.977675437927246
+      }
+    }
+  ],
+  "best_overall": 3.977675437927246,
+  "best_solution": {
+    "Feature_1": 762.4781833831513,
+    "Feature_2": 6.500137374158545,
+    "Feature_3": 71.08674962658228,
+    "Feature_4": 0.4615236876109333,
+    "Feature_5": 0.5190515308323953,
+    "Feature_6": 0.03878917672592441,
+    "Feature_7": 1297.9809620898614
+  }
+}

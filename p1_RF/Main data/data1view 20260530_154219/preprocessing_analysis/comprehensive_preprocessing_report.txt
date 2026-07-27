@@ -1,0 +1,67 @@
+================================================================================
+COMPREHENSIVE DATA PREPROCESSING REPORT
+================================================================================
+
+Generated: 2026-05-30 15:42:23
+Total features analyzed: 8
+
+PREPROCESSING STEPS SUMMARY
+----------------------------------------
+1. Missing Value Imputation: Median imputation for numerical columns
+2. Skewness Treatment: Log transformation for features with |skew| > 0.5
+3. Standardization: RobustScaler (IQR-based, outlier-resistant)
+4. Physical Scale Preservation: All transformation parameters saved
+
+STATISTICAL CHANGES SUMMARY
+----------------------------------------
+Features with significant skewness improvement (>0.1): 7 / 8
+Average skewness improvement: 1.428
+Average kurtosis change: 3.564
+Features with large kurtosis changes (>3): 3 / 8
+
+CORRELATION STRUCTURE CHANGES
+----------------------------------------
+Impact on feature relationships:
+  Mean correlation change: -0.0261
+  Mean absolute change: 0.0718
+  Maximum increase: 0.2228
+  Maximum decrease: -0.3037
+  Significant changes (>0.1): 21.4%
+  Total correlations analyzed: 28
+
+POTENTIAL ISSUES IDENTIFIED
+----------------------------------------
+Feature: speed
+  Issue: Large kurtosis change after log transform
+  Change magnitude: 8.581
+
+Feature: V
+  Issue: Large kurtosis change after log transform
+  Change magnitude: 3.623
+
+Feature: AdsSTP
+  Issue: Large kurtosis change after log transform
+  Change magnitude: 8.793
+
+Feature: T
+  Issue: Little skewness change
+  Change magnitude: 0.007
+
+RECOMMENDATIONS
+----------------------------------------
+2. WARNING: Large kurtosis changes in some features
+   - Check features with kurtosis change > 3 for data quality issues
+   - Consider alternative transformations for these features
+
+3. For features with little distribution change:
+   - These features may already be normally distributed
+   - Or may require different transformation strategies
+
+4. Physical Scale Preservation:
+   - All transformation parameters saved in scale_handler
+   - Can recover original scale for interpretability
+   - Essential for domain-specific applications
+
+================================================================================
+END OF REPORT
+================================================================================

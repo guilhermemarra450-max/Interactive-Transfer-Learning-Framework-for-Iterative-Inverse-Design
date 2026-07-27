@@ -1,0 +1,31 @@
+{
+  "timestamp": "20260208_025521",
+  "model_type": "RandomForestRegressor",
+  "target_variable": "AdsSTP",
+  "n_features": 7,
+  "n_samples": 691,
+  "training_samples": 691,
+  "test_samples": 173,
+  "standard_r2_score": 0.764390805267052,
+  "weighted_r2_score": 0.747229061743924,
+  "standard_rmse": 0.414997938925199,
+  "weighted_rmse": 0.42084522067357594,
+  "standard_mae": 0.193251281006343,
+  "weighted_mae": 0.1808428764097123,
+  "weight_based_training": true,
+  "target_transformed": false,
+  "feature_names": [
+    "T",
+    "v",
+    "t",
+    "r",
+    "V",
+    "Vmicro",
+    "SSA"
+  ],
+  "preprocessing_summary": {
+    "log_transform_applied": false,
+    "robust_scaling": true,
+    "physical_scale_preserved": true
+  }
+}

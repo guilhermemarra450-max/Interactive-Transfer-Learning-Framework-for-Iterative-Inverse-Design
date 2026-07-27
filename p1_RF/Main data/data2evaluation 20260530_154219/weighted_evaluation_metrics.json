@@ -1,0 +1,24 @@
+{
+  "weighted_r2": 0.747229061743924,
+  "weighted_rmse": 0.42084522067357594,
+  "weighted_mae": 0.1808428764097123,
+  "standard_r2": 0.764390805267052,
+  "standard_rmse": 0.414997938925199,
+  "standard_mae": 0.193251281006343,
+  "weight_stats": {
+    "min_weight": 0.21001021833706285,
+    "max_weight": 1.1661253933179103,
+    "mean_weight": 1.0000000000000002,
+    "std_weight": 0.2594362239708485,
+    "total_samples": 864,
+    "high_weight_samples": 0,
+    "low_weight_samples": 81,
+    "missing_stats": {
+      "mean_missing_ratio": 0.10102513227513227,
+      "std_missing_ratio": 0.1717177049978802,
+      "complete_samples": 578,
+      "incomplete_samples": 286
+    }
+  },
+  "target_transformed": false
+}

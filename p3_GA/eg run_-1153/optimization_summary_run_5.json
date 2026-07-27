@@ -1,0 +1,81 @@
+{
+  "timestamp": "20260208_025113",
+  "run_number": 5,
+  "optimization_type": "maximize",
+  "target_value": null,
+  "best_value": 3.977675437927246,
+  "actual_prediction": 3.977675437927246,
+  "feature_count": 7,
+  "ga_parameters": {
+    "population_size": 50,
+    "generations": 100,
+    "crossover_prob": 0.8,
+    "mutation_prob": 0.2,
+    "tournament_size": 3,
+    "eta": 10.0,
+    "elitism_ratio": 0.1,
+    "min_value": 0.0,
+    "max_value": 1.0,
+    "hof_size": 5
+  },
+  "optimal_solution": {
+    "Feature_1": 740.202763151209,
+    "Feature_2": 7.69300537397669,
+    "Feature_3": 39.04795319405628,
+    "Feature_4": 0.1982555966238803,
+    "Feature_5": 0.8424640978134155,
+    "Feature_6": 0.9032002261521332,
+    "Feature_7": 1153.2403361127535
+  },
+  "model_info": {
+    "target_variable": "Target",
+    "selected_features": [
+      "Feature_1",
+      "Feature_2",
+      "Feature_3",
+      "Feature_4",
+      "Feature_5",
+      "Feature_6",
+      "Feature_7"
+    ],
+    "original_feature_names": [
+      "Feature_1",
+      "Feature_2",
+      "Feature_3",
+      "Feature_4",
+      "Feature_5",
+      "Feature_6",
+      "Feature_7"
+    ],
+    "feature_ranges": {
+      "Feature_1": [
+        600.0,
+        1000.0
+      ],
+      "Feature_2": [
+        2.0,
+        10.0
+      ],
+      "Feature_3": [
+        30.0,
+        90.0
+      ],
+      "Feature_4": [
+        0.1,
+        0.6
+      ],
+      "Feature_5": [
+        0.0,
+        1.0
+      ],
+      "Feature_6": [
+        0.0,
+        1.0
+      ],
+      "Feature_7": [
+        1000.0,
+        1500.0
+      ]
+    }
+  }
+}

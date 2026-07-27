@@ -1,0 +1,22 @@
+Model Evaluation Summary
+========================
+Target Variable: AdsSTP
+Target Transform: without transform
+Training Samples: 691
+Test Samples: 173
+Features: 7
+Training Method: with sample weights
+
+Cross-Validation Results (5-fold):
+  Mean R²: 0.7313
+  Std R²: 0.0857
+
+Average Evaluation Metrics (10 iterations):
+  R² Score: 0.7644
+  MAE: 0.1933
+  RMSE: 0.4150
+  MRE: 306186044.5042
+  Explained Variance: 0.7646
+
+Model Parameters:
+  {'n_estimators': 200, 'max_depth': None, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'random_state': 42}

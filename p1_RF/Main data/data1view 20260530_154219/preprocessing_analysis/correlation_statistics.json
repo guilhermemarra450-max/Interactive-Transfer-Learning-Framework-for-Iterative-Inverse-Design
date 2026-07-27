@@ -1,0 +1,9 @@
+{
+  "mean_change": -0.026050955353813538,
+  "std_change": 0.10852950941926347,
+  "max_increase": 0.22284861770784672,
+  "max_decrease": -0.3036559625087527,
+  "abs_mean_change": 0.07183216558426705,
+  "pct_significant_changes": 21.428571428571427,
+  "n_total_correlations": 28
+}

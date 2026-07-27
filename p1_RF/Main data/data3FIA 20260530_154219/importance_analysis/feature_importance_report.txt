@@ -1,0 +1,32 @@
+Feature Importance Analysis Report
+==================================
+Generated: 2026-05-30 15:42:31
+Total Features Analyzed: 7
+Target Variable: AdsSTP
+
+Top 10 Most Important Features:
+----------------------------------------
+ 1. SSA                  - Importance: 0.2743 (27.4%)
+ 2. V                    - Importance: 0.2547 (25.5%)
+ 3. Vmicro               - Importance: 0.2095 (20.9%)
+ 4. ratio                - Importance: 0.0914 (9.1%)
+ 5. T                    - Importance: 0.0701 (7.0%)
+ 6. speed                - Importance: 0.0529 (5.3%)
+ 7. time                 - Importance: 0.0471 (4.7%)
+
+Cumulative Importance Analysis:
+----------------------------------------
+Top 5 features account for: 90.0%
+Top 10 features account for: 100.0%
+Top 20 features account for: 100.0%
+
+Interpretation:
+1. Features with importance > 5% are considered highly influential
+2. Features with importance < 1% may be candidates for removal
+3. Cumulative importance shows how many features capture most variance
+
+Recommendations:
+1. Focus on top features for model interpretation
+2. Consider feature engineering for high-importance features
+3. Low-importance features may be removed to reduce complexity
+4. Validate importance with domain knowledge

@@ -1,0 +1,5 @@
+Feature,Problem,Original_Kurt,Logged_Kurt,Change,Original_Skew,Logged_Skew
+speed,Large kurtosis change after log transform,9.595832133973888,1.0148410708076199,8.580991063166268,,
+V,Large kurtosis change after log transform,4.525433053711818,0.9028702183063024,3.6225628354055153,,
+AdsSTP,Large kurtosis change after log transform,10.37883911783257,1.5853929960788928,8.793446121753677,,
+T,Little skewness change,,,0.006785974329407862,-0.09937400063264265,-0.09258802630323479
