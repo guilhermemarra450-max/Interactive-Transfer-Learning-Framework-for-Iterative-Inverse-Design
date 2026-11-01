@@ -1,0 +1,7 @@
+Seaborn 调色板（离散型，适合分类数据）
+'deep', 'muted', 'bright', 'pastel', 'dark', 'colorblind', 'Set1', 'Set2', 'tab10'
+
+Matplotlib 顺序/发散型 colormap（连续色，也适用于多系列）
+'viridis', 'plasma', 'coolwarm', 'RdBu_r', 'RdYlBu', 'seismic'
+
+这些配色方案统一由 sns.color_palette() 或 plt.get_cmap() 加载。
