@@ -1,0 +1,213 @@
+{
+  "rf_timestamp": "20260208_025521",
+  "xgb_timestamp": "20261118_161754_426921",
+  "start_time": "2026-11-18T16:17:54.452296",
+  "total_batches": 1,
+  "total_samples": 11,
+  "batches": [
+    {
+      "batch_id": 1,
+      "samples": 11,
+      "results": {
+        "timestamp": "2026-11-18 16:17:54",
+        "samples": 11,
+        "features": 7,
+        "r2_score": 0.997110892214084,
+        "rmse": 0.06017423381248772,
+        "mae": 0.03486603580821637,
+        "mse": 0.00362093841491994,
+        "mre": 0.010797410044661542,
+        "explained_variance": 0.9971355043826468,
+        "n_estimators": 100,
+        "continued_training": false,
+        "additional_epochs": 0
+      },
+      "timestamp": "2026-11-18T16:17:54.488687",
+      "continued_training": false
+    }
+  ],
+  "evaluation_results": {
+    "traditional": {
+      "r2_score": 0.997110892214084,
+      "rmse": 0.06017423381248772,
+      "mae": 0.03486603580821637,
+      "mse": 0.00362093841491994,
+      "explained_variance": 0.9971355043826468,
+      "mre": 0.010797410044661542
+    },
+    "small_sample": {
+      "smape": 1.0634488922927865,
+      "median_ape": 0.2169575388716959,
+      "mean_ape": 1.0797410044661544,
+      "max_ape": 6.2822814034943555,
+      "rank_correlation": 1.0,
+      "accuracy_at_thresholds": {
+        "accuracy_1%": 72.72727272727273,
+        "accuracy_5%": 90.9090909090909,
+        "accuracy_10%": 100.0,
+        "accuracy_20%": 100.0
+      }
+    }
+  },
+  "load_existing_model": null,
+  "continue_training": false,
+  "is_small_sample": true,
+  "small_sample_evaluation": {
+    "is_small_sample": true,
+    "sample_count": 11,
+    "r2_score": 0.997110892214084,
+    "mse": 0.00362093841491994,
+    "rmse": 0.06017423381248772,
+    "mae": 0.03486603580821637,
+    "explained_variance": 0.9971355043826468,
+    "mre": 0.010797410044661542,
+    "smape": 1.0634488922927865,
+    "median_ape": 0.2169575388716959,
+    "mean_ape": 1.0797410044661544,
+    "max_ape": 6.2822814034943555,
+    "rank_correlation": 1.0,
+    "accuracy_at_thresholds": {
+      "accuracy_1%": 72.72727272727273,
+      "accuracy_5%": 90.9090909090909,
+      "accuracy_10%": 100.0,
+      "accuracy_20%": 100.0
+    },
+    "error_statistics": {
+      "mean_error": 0.005553971377286123,
+      "median_error": 0.0037501487731930183,
+      "std_error": 0.05991737491629808,
+      "min_error": -0.12159513092040974,
+      "max_error": 0.14593739700317387,
+      "error_range": 0.2675325279235836
+    },
+    "ratio_statistics": {
+      "mean_ratio": 1.004922741592994,
+      "median_ratio": 1.0006807313075319,
+      "std_ratio": 0.02021624820963015,
+      "min_ratio": 0.9789845954164518,
+      "max_ratio": 1.0628228140349436
+    },
+    "individual_errors": [
+      {
+        "sample": "R0-1",
+        "true_value": 3.385,
+        "predicted_value": 3.35457444190979,
+        "absolute_error": 0.030425558090209748,
+        "signed_error": -0.030425558090209748,
+        "percent_error": 0.8988348032558272,
+        "ratio": 0.9910116519674417
+      },
+      {
+        "sample": "R0-2",
+        "true_value": 3.078,
+        "predicted_value": 3.128919839859009,
+        "absolute_error": 0.05091983985900894,
+        "signed_error": 0.05091983985900894,
+        "percent_error": 1.6543157848930783,
+        "ratio": 1.0165431578489308
+      },
+      {
+        "sample": "R0-3",
+        "true_value": 2.323,
+        "predicted_value": 2.468937397003174,
+        "absolute_error": 0.14593739700317387,
+        "signed_error": 0.14593739700317387,
+        "percent_error": 6.2822814034943555,
+        "ratio": 1.0628228140349436
+      },
+      {
+        "sample": "R0-4",
+        "true_value": 3.058,
+        "predicted_value": 3.0646345615386963,
+        "absolute_error": 0.00663456153869646,
+        "signed_error": 0.00663456153869646,
+        "percent_error": 0.2169575388716959,
+        "ratio": 1.002169575388717
+      },
+      {
+        "sample": "R0-5",
+        "true_value": 3.158,
+        "predicted_value": 3.1535699367523193,
+        "absolute_error": 0.004430063247680582,
+        "signed_error": -0.004430063247680582,
+        "percent_error": 0.14028066015454663,
+        "ratio": 0.9985971933984545
+      },
+      {
+        "sample": "R0-6",
+        "true_value": 3.231,
+        "predicted_value": 3.2415642738342285,
+        "absolute_error": 0.010564273834228644,
+        "signed_error": 0.010564273834228644,
+        "percent_error": 0.3269660734827807,
+        "ratio": 1.0032696607348277
+      },
+      {
+        "sample": "R0-7",
+        "true_value": 5.786,
+        "predicted_value": 5.66440486907959,
+        "absolute_error": 0.12159513092040974,
+        "signed_error": -0.12159513092040974,
+        "percent_error": 2.1015404583548176,
+        "ratio": 0.9789845954164518
+      },
+      {
+        "sample": "R0-8",
+        "true_value": 5.509,
+        "predicted_value": 5.512750148773193,
+        "absolute_error": 0.0037501487731930183,
+        "signed_error": 0.0037501487731930183,
+        "percent_error": 0.06807313075318602,
+        "ratio": 1.0006807313075319
+      },
+      {
+        "sample": "R0-9",
+        "true_value": 5.271,
+        "predicted_value": 5.266234397888184,
+        "absolute_error": 0.004765602111816314,
+        "signed_error": -0.004765602111816314,
+        "percent_error": 0.0904117266517988,
+        "ratio": 0.999095882733482
+      },
+      {
+        "sample": "R0-10",
+        "true_value": 4.674,
+        "predicted_value": 4.678056716918945,
+        "absolute_error": 0.004056716918944936,
+        "signed_error": 0.004056716918944936,
+        "percent_error": 0.08679325885633152,
+        "ratio": 1.0008679325885632
+      },
+      {
+        "sample": "R0-11",
+        "true_value": 4.18,
+        "predicted_value": 4.180447101593018,
+        "absolute_error": 0.00044710159301786234,
+        "signed_error": 0.00044710159301786234,
+        "percent_error": 0.010696210359279004,
+        "ratio": 1.0001069621035927
+      }
+    ]
+  },
+  "evaluation_scope": "in_sample_training_fit",
+  "historical_preprocessing_verified": true,
+  "input_preprocessing_provenance": "fitted_for_this_run",
+  "label_source": "measured",
+  "end_time": "2026-11-18T16:17:55.292040",
+  "final_model": {
+    "model_type": "XGBoostRegressor",
+    "n_estimators": 100,
+    "selected_features": [
+      "SSA",
+      "V",
+      "Vmicro",
+      "r",
+      "T",
+      "v",
+      "t"
+    ],
+    "feature_count": 7,
+    "target_variable": "AdsSTP",
+    "is_small_sample": true
+  }
+}

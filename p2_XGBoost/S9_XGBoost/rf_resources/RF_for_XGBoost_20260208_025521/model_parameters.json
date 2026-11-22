@@ -1,0 +1,28 @@
+{
+  "model_type": "RandomForestRegressor",
+  "target_variable": "AdsSTP",
+  "cv_score": 0.0,
+  "timestamp": "20260208_025521",
+  "feature_count": 7,
+  "training_samples": 691,
+  "training_date": "2026-02-08 02:55:42",
+  "weight_based_training": true,
+  "weight_stats": {
+    "min_weight": 0.21001021833706285,
+    "max_weight": 1.1661253933179103,
+    "mean_weight": 1.0000000000000002,
+    "std_weight": 0.2594362239708485,
+    "total_samples": 864,
+    "high_weight_samples": 0,
+    "low_weight_samples": 81,
+    "missing_stats": {
+      "mean_missing_ratio": 0.10102513227513227,
+      "std_missing_ratio": 0.1717177049978802,
+      "complete_samples": 578,
+      "incomplete_samples": 286
+    }
+  },
+  "target_transformed": false,
+  "preprocessing_applied": true,
+  "physical_scale_preserved": true
+}

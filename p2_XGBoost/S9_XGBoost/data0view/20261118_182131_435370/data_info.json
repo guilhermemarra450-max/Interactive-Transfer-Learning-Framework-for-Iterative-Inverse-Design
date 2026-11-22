@@ -1,0 +1,41 @@
+{
+  "timestamp": "20261118_182131_435370",
+  "rows": 11,
+  "columns": 8,
+  "target_column": "AdsSTP",
+  "has_labels": true,
+  "sample_names": [
+    "R0-1",
+    "R0-2",
+    "R0-3",
+    "R0-4",
+    "R0-5",
+    "R0-6",
+    "R0-7",
+    "R0-8",
+    "R0-9",
+    "R0-10",
+    "R0-11"
+  ],
+  "is_small_sample": true,
+  "column_names": [
+    "T",
+    "v",
+    "t",
+    "r",
+    "V",
+    "Vmicro",
+    "SSA",
+    "AdsSTP"
+  ],
+  "data_types": {
+    "T": "int64",
+    "v": "int64",
+    "t": "int64",
+    "r": "float64",
+    "V": "float64",
+    "Vmicro": "float64",
+    "SSA": "float64",
+    "AdsSTP": "float64"
+  }
+}

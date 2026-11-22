@@ -1,0 +1,27 @@
+{
+  "timestamp": "20261118_161754_426921",
+  "original_samples": 11,
+  "preprocessed_samples": 11,
+  "preprocessed_features": 7,
+  "target_variable": "AdsSTP",
+  "has_labels": true,
+  "sample_names": [
+    "R0-1",
+    "R0-2",
+    "R0-3",
+    "R0-4",
+    "R0-5",
+    "R0-6",
+    "R0-7",
+    "R0-8",
+    "R0-9",
+    "R0-10",
+    "R0-11"
+  ],
+  "is_small_sample": true,
+  "skewed_columns": [
+    "t",
+    "V"
+  ],
+  "normalization_used": true
+}

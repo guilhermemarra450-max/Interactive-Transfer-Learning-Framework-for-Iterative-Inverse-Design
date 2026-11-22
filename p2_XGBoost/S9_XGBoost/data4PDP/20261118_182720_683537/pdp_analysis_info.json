@@ -1,0 +1,14 @@
+{
+  "timestamp": "20261118_182720_683537",
+  "features_analyzed": [
+    "SSA",
+    "V",
+    "Vmicro",
+    "r",
+    "T"
+  ],
+  "model_type": "XGBoostRegressor",
+  "target_variable": "AdsSTP",
+  "samples_used": 11,
+  "is_small_sample": true
+}

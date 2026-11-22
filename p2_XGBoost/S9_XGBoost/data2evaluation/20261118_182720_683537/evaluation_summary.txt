@@ -1,0 +1,42 @@
+
+XGBoost Transfer Learning Evaluation Summary
+================================
+RF Source Timestamp   : 20260208_025521
+XGBoost Timestamp     : 20261118_182720_683537
+Sample Type           : 小样本
+Target Variable       : AdsSTP
+Start Time            : 2026-11-18T18:27:20.697722
+Samples               : 11
+Features              : 7
+
+In-sample training metrics (batch averages):
+  R²            : 0.9971
+  RMSE          : 0.0602
+  MAE           : 0.0349
+  MRE           : 0.0108
+  Explained Var : 0.9971
+
+Small Sample Metrics:
+  SMAPE             : 1.06%
+  Median APE        : 0.22%
+  Mean APE          : 1.08%
+  Rank Correlation  : 1.000
+
+Accuracy at Thresholds:
+  ±1%: 72.7%
+  ±5%: 90.9%
+  ±10%: 100.0%
+  ±20%: 100.0%
+
+Model Parameters:
+  Boosting rounds: 100
+  Max Depth     : 6
+  Learning Rate : 0.1
+
+Output Directories:
+  data0view : /Users/fcblakersxx32/Desktop/S9_XGBoost/data0view/20261118_182720_683537
+  data1view : /Users/fcblakersxx32/Desktop/S9_XGBoost/data1view/20261118_182720_683537
+  data2eval : /Users/fcblakersxx32/Desktop/S9_XGBoost/data2evaluation/20261118_182720_683537
+  data3FIA  : /Users/fcblakersxx32/Desktop/S9_XGBoost/data3FIA/20261118_182720_683537
+  data4PDP  : /Users/fcblakersxx32/Desktop/S9_XGBoost/data4PDP/20261118_182720_683537
+  bestmodel : /Users/fcblakersxx32/Desktop/S9_XGBoost/bestmodel/20261118_182720_683537

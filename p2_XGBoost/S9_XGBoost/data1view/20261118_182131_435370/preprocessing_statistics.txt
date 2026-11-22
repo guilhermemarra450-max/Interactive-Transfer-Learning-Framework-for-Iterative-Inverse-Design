@@ -1,0 +1,99 @@
+Preprocessed Data Statistics Summary
+================================
+Timestamp: 20261118_182131_435370
+Shape: 11 rows × 8 cols
+Target: AdsSTP
+Contains Labels: True
+Sample Type: 小样本
+
+Column Information (8 cols):
+   1. T                         (float64): 11 non-null, 0 null
+   2. v                         (float64): 11 non-null, 0 null
+   3. t                         (float64): 11 non-null, 0 null
+   4. r                         (float64): 11 non-null, 0 null
+   5. V                         (float64): 11 non-null, 0 null
+   6. Vmicro                    (float64): 11 non-null, 0 null
+   7. SSA                       (float64): 11 non-null, 0 null
+   8. AdsSTP                    (float64): 11 non-null, 0 null
+
+Numeric Columns Statistics:
+
+  T:
+    count: 11.0000
+    mean: 1507.2654
+    std: 385.2195
+    min: 1076.5769
+    25%: 1076.5769
+    50%: 1507.2654
+    75%: 1937.9539
+    max: 1937.9539
+
+  v:
+    count: 11.0000
+    mean: 6.0622
+    std: 3.3655
+    min: 2.2994
+    25%: 2.2994
+    50%: 6.0622
+    75%: 9.8249
+    max: 9.8249
+
+  t:
+    count: 11.0000
+    mean: 3.6537
+    std: 0.1722
+    min: 3.3856
+    25%: 3.5699
+    50%: 3.7543
+    75%: 3.7543
+    max: 3.7543
+
+  r:
+    count: 11.0000
+    mean: 0.1792
+    std: 0.3314
+    min: -0.1913
+    25%: -0.1913
+    50%: 0.1792
+    75%: 0.5497
+    max: 0.5497
+
+  V:
+    count: 11.0000
+    mean: 0.1667
+    std: 0.1901
+    min: -0.0752
+    25%: 0.0492
+    50%: 0.1263
+    75%: 0.2182
+    max: 0.5510
+
+  Vmicro:
+    count: 11.0000
+    mean: 0.1158
+    std: 0.0852
+    min: -0.0027
+    25%: 0.0488
+    50%: 0.0952
+    75%: 0.1759
+    max: 0.2657
+
+  SSA:
+    count: 11.0000
+    mean: 736.5438
+    std: 211.4971
+    min: 440.7766
+    25%: 582.0869
+    50%: 614.7188
+    75%: 924.6084
+    max: 1046.7956
+
+  AdsSTP:
+    count: 11.0000
+    mean: 3.9685
+    std: 1.1742
+    min: 2.3230
+    25%: 3.1180
+    50%: 3.3850
+    75%: 4.9725
+    max: 5.7860
