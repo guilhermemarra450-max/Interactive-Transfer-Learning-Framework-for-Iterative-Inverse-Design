@@ -74,12 +74,16 @@ class XGBoostModelLoader:
     """XGBoost Model Loader"""
 
     def __init__(self, log_callback=None):
+        self.log_callback = log_callback
+        self._reset_model()
+
+    def _reset_model(self):
+        self.s9_columns = None
         self.model = None
         self.model_info = None
         self.selected_features = []
         self.target_variable = "Target"
         self.feature_ranges = {}
-        self.log_callback = log_callback
         self.model_params = {}
         # Add data scalers for reverse transformation
         self.feature_scaler = None
@@ -123,6 +127,7 @@ class XGBoostModelLoader:
 
     def load_model(self, model_path):
         """Load XGBoost model"""
+        self._reset_model()
         try:
             self.log(f"Loading model: {model_path}")
 
@@ -145,6 +150,14 @@ class XGBoostModelLoader:
 
                 # Extract key information
                 self.target_variable = self.model_info.get('target_variable', 'Target')
+                if 'input_preprocessing' in self.model_info:
+                    self._load_s9_inputs()
+                    self._initialize_default_feature_ranges()
+                    self.log("S9 model loaded. Enter search bounds in original physical units.")
+                    return True, "Model loaded successfully"
+                if 'input_preprocessing_provenance' in self.model_info:
+                    raise ValueError("Select the S9 .pkl beside its matching model_info_<timestamp>.json.")
+
                 self.selected_features = self.model_info.get('selected_features', [])
 
                 # Get original feature names
@@ -183,7 +196,34 @@ class XGBoostModelLoader:
             return True, "Model loaded successfully"
 
         except Exception as e:
+            self._reset_model()
             return False, f"Model loading failed: {str(e)}"
+
+    def _load_s9_inputs(self):
+        order = self.model_info.get("feature_order")
+        state = self.model_info["input_preprocessing"]
+        if not isinstance(order, list) or not order or len(set(order)) != len(order):
+            raise ValueError("S9 metadata must contain a unique, ordered feature list.")
+        if not isinstance(state, dict) or state.get("version") != 1:
+            raise ValueError("Unsupported S9 input preprocessing format.")
+        booster = self.model.get_booster()
+        if booster.num_features() != len(order) or (booster.feature_names and booster.feature_names != order):
+            raise ValueError("S9 feature order does not match the selected XGBoost model.")
+
+        columns = state["columns"]
+        for name in order:
+            spec = columns[name]
+            median, mean, std = spec["median"], spec["mean"], spec["std"]
+            offset = spec["log_offset"]
+            if not np.isfinite([median, mean, std]).all() or std <= 0:
+                raise ValueError(f"Invalid S9 preprocessing statistics for {name}.")
+            if offset is not None and not np.isfinite(offset):
+                raise ValueError(f"Invalid S9 log offset for {name}.")
+
+        self.s9_columns = columns
+        self.selected_features = list(order)
+        self.original_feature_names = list(order)
+        self.original_feature_stats = {name: columns[name] for name in order}
 
     def _extract_feature_stats_from_model_info(self):
         """Extract feature statistics from model info"""
@@ -239,6 +279,13 @@ class XGBoostModelLoader:
                 self.log(f"Warning: JSON file content is not dictionary format: {type(loaded_data)}")
                 # Try to convert or process
                 loaded_data = dict(loaded_data) if hasattr(loaded_data, 'items') else {}
+
+            if self.s9_columns is not None:
+                if (loaded_data.get("timestamp") != self.model_info.get("timestamp")
+                        or loaded_data.get("feature_order") != self.selected_features
+                        or loaded_data.get("input_preprocessing") != self.model_info["input_preprocessing"]):
+                    raise ValueError("This S9 model already has its own feature order and preprocessing.")
+                return True, "Matching S9 model information is already active."
 
             self.json_feature_info = loaded_data
             self.log(f"✓ JSON file loaded successfully")
@@ -391,6 +438,15 @@ class XGBoostModelLoader:
 
     def _find_model_info_file(self, model_path):
         """Find model info file"""
+        stem = os.path.splitext(os.path.basename(model_path))[0]
+        if stem.startswith("XGBoost_model_"):
+            timestamp = stem[len("XGBoost_model_"):]
+            companion = os.path.join(os.path.dirname(model_path), f"model_info_{timestamp}.json")
+            if os.path.isfile(companion):
+                return companion
+            # Recovered S9 exports include microseconds in their model filenames.
+            if len(timestamp.split("_")) == 3 and all(part.isdigit() for part in timestamp.split("_")):
+                raise ValueError(f"Missing S9 model metadata: {os.path.basename(companion)}")
         possible_paths = [
             model_path.replace('.pkl', '_info.json'),
             model_path.replace('.pkl', '.json'),
@@ -510,7 +566,25 @@ class XGBoostModelLoader:
         elif isinstance(X, np.ndarray) and len(X.shape) == 1:
             X = X.reshape(1, -1)
 
-        if self.feature_scaler is not None:
+        if self.s9_columns is not None:
+            if isinstance(X, pd.DataFrame):
+                X = X.loc[:, self.selected_features]
+            X = np.array(X, dtype=float, copy=True, ndmin=2)
+            if X.ndim != 2 or X.shape[1] != len(self.selected_features):
+                raise ValueError("Input columns must match the S9 feature order.")
+            for i, name in enumerate(self.selected_features):
+                spec = self.s9_columns[name]
+                values = X[:, i]
+                if np.isinf(values).any():
+                    raise ValueError(f"{name} contains an infinite value.")
+                values[np.isnan(values)] = spec["median"]
+                offset = spec["log_offset"]
+                if offset is not None:
+                    if np.any(values + offset <= 0):
+                        raise ValueError(f"{name} is outside the fitted logarithm domain.")
+                    values = np.log(values + offset)
+                X[:, i] = (values - spec["mean"]) / spec["std"]
+        elif self.feature_scaler is not None:
             X = self.feature_scaler.transform(X)
 
         if X.shape[1] != len(self.selected_features):
@@ -542,7 +616,7 @@ Number of Features: {len(self.selected_features)}
             summary += f"Feature Names: Feature_1, Feature_2, ...\n"
 
         summary += f"""
-Feature Scaling: {'Yes' if self.feature_scaler is not None else 'No'}
+Feature Scaling: {'S9 (saved preprocessing)' if self.s9_columns is not None else ('Yes' if self.feature_scaler is not None else 'No')}
 Target Scaling: {'Yes' if self.target_scaler is not None else 'No'}
 Feature Statistics Available: {'Yes' if self.original_feature_stats else 'No'}
 JSON Feature Info: {'Loaded' if self.json_feature_info else 'Not loaded'}
@@ -1629,7 +1703,9 @@ class GAXGBoostOptimizerGUI:
 
                 # If JSON already loaded, apply JSON info
                 json_path = self.json_path.get()
-                if json_path and os.path.exists(json_path):
+                if self.model_loader.s9_columns is not None:
+                    self.json_path.set("")
+                elif json_path and os.path.exists(json_path):
                     self.load_feature_json()
                 else:
                     # If no JSON, use model features
@@ -1675,6 +1751,8 @@ class GAXGBoostOptimizerGUI:
 
             if success:
                 self.log(f"✓ {message}")
+                if self.model_loader.s9_columns is not None:
+                    return  # Its feature table is already in model order; keep the edited bounds.
 
                 # Update model information display
                 model_info = self.model_loader.get_model_info_summary()
